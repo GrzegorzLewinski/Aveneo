@@ -1,0 +1,52 @@
+﻿@model IEnumerable<NIP.Models.FIRMA>
+<link href="@Url.Content("~/Scripts/CSSFile.css")" rel="stylesheet" type="text/css" />
+
+<h4>Spis Firm/Przedsiębiorstw</h4>
+<hr />
+<table class="table" cellspacing="5" cellpadding="5">
+    <tr>
+        <th>
+            NIP/KSR/REGON
+        </th>
+        <th>
+            Nazwa Firmy
+        </th>
+        <th>
+            Ulica
+        </th>
+        <th>
+            NR lokalu
+        </th>
+        <th>
+            Kod Pocztowy
+        </th>
+        <th>
+            Miejscowość
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Indentyfikator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nazwa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ulica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KodPocztowy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Miasto)
+        </td>
+    </tr>
+}
+
+</table>

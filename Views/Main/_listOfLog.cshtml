@@ -1,0 +1,35 @@
+﻿@model IEnumerable<NIP.Models.LOGS>
+<link href="@Url.Content("~/Scripts/CSSFile.css")" rel="stylesheet" type="text/css" />
+
+<h4>Spis Logów</h4>
+<hr />
+<table class="table" cellpadding="5" cellspacing="5">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Indentyfikator)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Naglowki)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Indentyfikator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naglowki)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data)
+        </td>
+        
+    </tr>
+}
+
+</table>

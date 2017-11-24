@@ -1,0 +1,61 @@
+﻿@model NIP.Models.FIRMA
+<link href="@Url.Content("~/Scripts/CSSFile.css")" rel="stylesheet" type="text/css" />
+
+
+<div>
+    <h4>Dane Firmy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            NIP/KSR/REGON:
+        </dt>
+
+        <dd>
+            <input value=@Html.DisplayFor(model => model.Indentyfikator)>
+        </dd>
+
+        <dt>
+            Nazwa Firmy/Przedsiębiorstwa:
+        </dt>
+
+        <dd>
+            <input value=@Html.DisplayFor(model => model.Nazwa)>
+        </dd>
+
+        <dt>
+            Ulica:
+        </dt>
+
+        <dd>
+            <input value=@Html.DisplayFor(model => model.Ulica)>
+        </dd>
+
+        <dt>
+            NR lokalu:
+        </dt>
+
+        <dd>
+            <input value=@Html.DisplayFor(model => model.NR)>
+        </dd>
+
+        <dt>
+            Kod Pocztowy:
+        </dt>
+
+        <dd>
+            <input value=@Html.DisplayFor(model => model.KodPocztowy)>
+        </dd>
+
+        <dt>
+            Miejscowość:
+        </dt>
+
+        <dd>
+            <input value=@Html.DisplayFor(model => model.Miasto)>
+        </dd>
+
+    </dl>
+</div>
+@ViewBag.Message
+
+

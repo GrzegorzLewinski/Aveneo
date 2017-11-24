@@ -1,0 +1,80 @@
+﻿@model IEnumerable<NIP.Models.FIRMA>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div id="divToGetID">
+
+        <div id="columnToGetData" class="column">
+            <table cellpadding="2" cellspacing="5">
+                <tr>
+                    <td align="center">NIP/KSR/REGON</td>
+                </tr>
+                <tr>
+                    <td><input id="idCompanyField" type="text" /></td>
+                </tr>
+                <tr>
+                    <td align="center"><input id="getId" class="btn" value="Pobierz dane" type="button" onclick="findCompany()" /></td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div id="infoColumn" class="column">
+            <p>
+                NIP można wpisać w różnych formatach:
+                <ul id="ListOfNipFormat">
+                    <li> bez myślników: 1234567890 </li>
+                    <li> z myślnikami: 123-456-78-90 </li>
+                    <li> europejski: PL1234567890</li>
+                </ul>
+            </p>
+        </div>
+
+        <div id="connectionColumn" class="column"> 
+            <p>Wyświetl listę:</p>
+            <input type="button" class="btn" value="Wszystkich przedsiębiorsw" onclick="showAllCompany()"/>
+            <br /><br />
+            <input type="button" class="btn" value="Wyszukiwanych przedsiębiorsw" onclick="showLog()"/>
+        </div>
+
+    </div>
+    
+    <div id="fieldToShowInformation" />
+
+</body>
+</html>
+
+<link href="@Url.Content("~/Scripts/CSSFile.css")" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+        function findCompany()
+        {
+            var url = "@Url.Action("_companyDetails", "Main")" + "?idCompany=" + $('#idCompanyField').val();
+            $('#fieldToShowInformation').load(url);
+        }
+        
+        function showAllCompany()
+        {
+            var url = "@Url.Action("_listOfAllCompany", "Main")";
+            $('#fieldToShowInformation').load(url);
+        }
+
+    function showLog()
+    {
+        var url = "@Url.Action("_listOfLog", "Main")";
+        $('#fieldToShowInformation').load(url);
+    }
+</script>
+
+
